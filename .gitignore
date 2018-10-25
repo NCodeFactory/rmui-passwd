@@ -59,3 +59,12 @@ typings/
 
 # next.js build output
 .next
+
+# Mochawesome tests results
+test-results/
+
+# Compiled with source maps for vscode debugger
+.compiled/
+
+# Prepared for npm's publish
+lib/

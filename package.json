@@ -1,0 +1,42 @@
+{
+  "name": "@ncodefactory/rmui-passwd",
+  "version": "4.0.0",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "repository": "ncodefactory/rmui-passwd",
+  "scripts": {
+    "compile": "babel src --out-dir .compiled --source-maps",
+    "prepare": "babel src --out-dir lib --ignore '**/*.spec.js, **/*app.js'",
+    "compile:watch": "babel src --out-dir .compiled --source-maps --watch",
+    "start": "node --require babel-core/register src/app.js",
+    "test": "mocha --reporter mochawesome --reporter-options reportDir=test-results src/**/*spec.js --require babel-core/register --recursive",
+    "test:watch": "yarn test -- --watch"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.1.0",
+    "prettier-eslint": "^8.8.2"
+  }
+}
