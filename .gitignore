@@ -67,4 +67,4 @@ test-results/
 .compiled/
 
 # Prepared for npm's publish
-lib/
+dist/

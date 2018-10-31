@@ -2,11 +2,11 @@
   "name": "@ncodefactory/rmui-passwd",
   "version": "5.0.0",
   "license": "MIT",
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
   "repository": "ncodefactory/rmui-passwd",
   "scripts": {
     "compile": "babel src --out-dir .compiled --source-maps",
-    "prepare": "babel src --out-dir lib --ignore '**/*.spec.js, **/*app.js'",
+    "prepare": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --ignore '**/*.spec.js, **/*app.js'",
     "compile:watch": "babel src --out-dir .compiled --source-maps --watch",
     "start": "node --require babel-core/register src/app.js",
     "test": "mocha --reporter mochawesome --reporter-options reportDir=test-results src/**/*spec.js --require babel-core/register --recursive",
