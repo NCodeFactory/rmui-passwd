@@ -1,6 +1,6 @@
 {
   "name": "@ncodefactory/rmui-passwd",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "license": "MIT",
   "main": "./dist/index.js",
   "repository": "ncodefactory/rmui-passwd",
