@@ -7,27 +7,26 @@
     {
       "type": "node",
       "request": "launch",
-      "preLaunchTask": "npm: compile",
       "name": "DEBUG Whole Application (app.js)",
       "program": "${workspaceRoot}/src/app.js",
       "outFiles": ["${workspaceRoot}/.compiled/**/*.js"],
-      "internalConsoleOptions": "openOnSessionStart"
+      "internalConsoleOptions": "openOnSessionStart",
+      "runtimeExecutable": "/home/${env:USER}/.nvm/versions/node/v10.13.0/bin/node",
     },
     {
       "type": "node",
       "request": "launch",
-      "preLaunchTask": "npm: compile",
       "name": "DEBUG Current JS File (no test)",
       "program": "${file}",
       "outFiles": ["${workspaceRoot}/.compiled/**/*.js"],
-      "internalConsoleOptions": "openOnSessionStart"
+      "internalConsoleOptions": "openOnSessionStart",
+      "runtimeExecutable": "/home/${env:USER}/.nvm/versions/node/v10.13.0/bin/node",
     },
     {
       "name": "DEBUG All Tests",
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceRoot}",
-      "preLaunchTask": "npm: compile",
       "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
       "args": [
         "-u",
@@ -46,14 +45,8 @@
       "name": "RUN Current Test File (without debugging)",
       "type": "node",
       "request": "launch",
-      "preLaunchTask": "npm: compile",
       "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
-      "args": [
-        "--require",
-        "babel-core/register",
-        "--colors",
-        "${relativeFile}"
-      ],
+      "args": ["--require", "@babel/register", "--colors", "${relativeFile}"],
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",
       "internalConsoleOptions": "openOnSessionStart",
