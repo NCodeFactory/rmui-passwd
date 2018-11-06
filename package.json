@@ -8,8 +8,8 @@
     "compile": "babel src --out-dir .compiled --source-maps",
     "prepare": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --ignore '**/*.spec.js, **/*app.js'",
     "compile:watch": "babel src --out-dir .compiled --source-maps --watch",
-    "start": "node --require babel-core/register src/app.js",
-    "test": "mocha --reporter mochawesome --reporter-options reportDir=test-results src/**/*spec.js --require babel-core/register --recursive",
+    "start": "node --require @babel/register src/app.js",
+    "test": "mocha --reporter mochawesome --reporter-options reportDir=test-results src/**/*spec.js --require @babel/register --recursive",
     "test:watch": "npm run test -- --watch"
   },
   "babel": {
